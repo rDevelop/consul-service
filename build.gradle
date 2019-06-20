@@ -1,0 +1,37 @@
+buildscript {
+    dependencies {
+
+        classpath group: 'org.springframework.boot', name: 'spring-boot-gradle-plugin', version: '1.5.2.RELEASE'
+
+    }
+    repositories {
+        mavenCentral()
+    }
+}
+
+group 'us.rlit.ds.consul.service'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'idea'
+apply plugin: 'java'
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: springVersion
+    compile group: 'org.springframework.boot', name: 'spring-boot-configuration-processor', version: springVersion
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-consul-all', version: consulVersion
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-consul-config', version: consulVersion
+
+    compile group: 'org.json', name: 'json', version: '20180813'
+
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: springVersion
+}
